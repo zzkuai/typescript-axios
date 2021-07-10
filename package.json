@@ -1,0 +1,20 @@
+{
+  "name": "typescript-axios",
+  "version": "1.0.0",
+  "description": "使用 TypeScript 实现 axios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzkuai/typescript-axios.git"
+  },
+  "keywords": [],
+  "author": "zzkuai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzkuai/typescript-axios/issues"
+  },
+  "homepage": "https://github.com/zzkuai/typescript-axios#readme"
+}
