@@ -66,4 +66,15 @@ router.options('/extend', (req, res) => {
   res.send('extend options')
 })
 
+router.post('/extend/user', (req, res) => {
+  res.json({
+    code: 0,
+    msg: '成功',
+    data: {
+      name: 'zzkuai',
+      age: 24,
+    },
+  })
+})
+
 module.exports = router

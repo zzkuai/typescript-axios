@@ -5,6 +5,7 @@
 <script lang="ts">
 import axios from '@/axios'
 import { defineComponent } from 'vue'
+import { getUser, User } from '../service/extend'
 
 export default defineComponent({
   setup() {
@@ -51,6 +52,10 @@ export default defineComponent({
       data: {
         msg: 'hello',
       },
+    })
+
+    getUser<User>().then((res) => {
+      console.log(res.data.name)
     })
 
     return {}
