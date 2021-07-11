@@ -75,17 +75,20 @@ export default defineComponent({
       axios({
         method: 'post',
         url: '/api/base',
+        responseType: 'json',
         data: {
           a: 1,
           b: 2,
         },
+      }).then((res) => {
+        console.log(res)
       })
 
       axios({
         method: 'post',
         url: '/api/base',
         headers: {
-          'content-type': 'application/json',
+          // 'content-type': 'application/json',
           // accept: 'application/json,text/plain',
         },
         data: {
@@ -93,6 +96,8 @@ export default defineComponent({
           b: 2,
           c: 3,
         },
+      }).then((res) => {
+        console.log(res)
       })
 
       const paramsString = 'q=URLUtils.searchParams&topic=api'
