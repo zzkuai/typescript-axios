@@ -17,6 +17,11 @@ const router = createRouter({
       name: 'simple',
       component: () => import('./pages/simple.vue'),
     },
+    {
+      path: '/base',
+      name: 'base',
+      component: () => import('./pages/base.vue'),
+    },
   ],
 })
 

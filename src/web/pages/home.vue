@@ -18,6 +18,11 @@ export default defineComponent({
         url: 'simple',
         name: 'simple',
       },
+      {
+        id: 'base',
+        url: 'base',
+        name: 'base',
+      },
     ]
 
     return {
