@@ -3,6 +3,9 @@ const api = require('./router/api')
 
 const app = express()
 
+app.use(express.json())
+app.use(express.urlencoded())
+
 app.use('/api', api)
 
 app.listen('3000')

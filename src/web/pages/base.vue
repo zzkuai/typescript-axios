@@ -83,6 +83,28 @@ export default defineComponent({
 
       axios({
         method: 'post',
+        url: '/api/base',
+        headers: {
+          'content-type': 'application/json',
+          // accept: 'application/json,text/plain',
+        },
+        data: {
+          a: 1,
+          b: 2,
+          c: 3,
+        },
+      })
+
+      const paramsString = 'q=URLUtils.searchParams&topic=api'
+      const searchParams = new URLSearchParams(paramsString)
+      axios({
+        method: 'post',
+        url: '/api/base',
+        data: searchParams,
+      })
+
+      axios({
+        method: 'post',
         url: '/api/base/buffer',
         data: new Int32Array([21, 32]),
       })
