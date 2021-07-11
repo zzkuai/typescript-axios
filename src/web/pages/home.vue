@@ -28,6 +28,11 @@ export default defineComponent({
         url: 'error',
         name: 'error',
       },
+      {
+        id: 'extend',
+        url: 'extend',
+        name: 'extend',
+      },
     ]
 
     return {

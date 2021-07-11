@@ -27,6 +27,11 @@ const router = createRouter({
       name: 'error',
       component: () => import('./pages/error.vue'),
     },
+    {
+      path: '/extend',
+      name: 'extend',
+      component: () => import('./pages/extend.vue'),
+    },
   ],
 })
 

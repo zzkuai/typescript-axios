@@ -42,4 +42,28 @@ router.get('/error/timeout', (req, res) => {
   }, 3000)
 })
 
+router.get('/extend', (req, res) => {
+  res.send('extend get')
+})
+
+router.post('/extend', (req, res) => {
+  res.send('extend post')
+})
+
+router.put('/extend', (req, res) => {
+  res.send('extend put')
+})
+
+router.delete('/extend', (req, res) => {
+  res.send('extend delete')
+})
+
+router.patch('/extend', (req, res) => {
+  res.send('extend patch')
+})
+
+router.options('/extend', (req, res) => {
+  res.send('extend options')
+})
+
 module.exports = router
