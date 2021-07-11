@@ -27,4 +27,19 @@ router.post('/base/buffer', (req, res) => {
   })
 })
 
+router.get('/error', (req, res) => {
+  if (Math.random() > 0.5) {
+    res.json({ success: true })
+  } else {
+    res.status(500)
+    res.send()
+  }
+})
+
+router.get('/error/timeout', (req, res) => {
+  setTimeout(() => {
+    res.json({ success: true })
+  }, 3000)
+})
+
 module.exports = router

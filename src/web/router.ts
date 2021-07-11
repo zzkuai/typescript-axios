@@ -22,6 +22,11 @@ const router = createRouter({
       name: 'base',
       component: () => import('./pages/base.vue'),
     },
+    {
+      path: '/error',
+      name: 'error',
+      component: () => import('./pages/error.vue'),
+    },
   ],
 })
 

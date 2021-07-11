@@ -23,6 +23,11 @@ export default defineComponent({
         url: 'base',
         name: 'base',
       },
+      {
+        id: 'error',
+        url: 'error',
+        name: 'error',
+      },
     ]
 
     return {
@@ -31,5 +36,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style scoped></style>
