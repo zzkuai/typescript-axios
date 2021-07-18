@@ -33,6 +33,11 @@ export default defineComponent({
         url: 'extend',
         name: 'extend',
       },
+      {
+        id: 'interceptor',
+        url: 'interceptor',
+        name: 'interceptor',
+      },
     ]
 
     return {

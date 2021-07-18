@@ -77,4 +77,11 @@ router.post('/extend/user', (req, res) => {
   })
 })
 
+router.get('/interceptor', (req, res) => {
+  res.json({
+    message: 'interceptor',
+    number: '',
+  })
+})
+
 module.exports = router

@@ -32,6 +32,11 @@ const router = createRouter({
       name: 'extend',
       component: () => import('./pages/extend.vue'),
     },
+    {
+      path: '/interceptor',
+      name: 'interceptor',
+      component: () => import('./pages/interceptor.vue'),
+    },
   ],
 })
 
