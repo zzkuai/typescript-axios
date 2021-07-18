@@ -50,6 +50,15 @@ export default defineComponent({
       console.log(res.data)
     })
 
+    const instance = axios.create({
+      timeout: 1000,
+    })
+    instance.defaults.headers.common['instance'] = '123'
+    instance({
+      url: '/api/config',
+      method: 'post',
+    })
+
     return {}
   },
 })
