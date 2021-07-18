@@ -37,6 +37,11 @@ const router = createRouter({
       name: 'interceptor',
       component: () => import('./pages/interceptor.vue'),
     },
+    {
+      path: '/config',
+      name: 'config',
+      component: () => import('./pages/config.vue'),
+    },
   ],
 })
 

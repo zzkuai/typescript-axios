@@ -38,6 +38,11 @@ export default defineComponent({
         url: 'interceptor',
         name: 'interceptor',
       },
+      {
+        id: 'config',
+        url: 'config',
+        name: 'config',
+      },
     ]
 
     return {

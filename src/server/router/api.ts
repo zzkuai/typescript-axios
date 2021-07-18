@@ -84,4 +84,18 @@ router.get('/interceptor', (req, res) => {
   })
 })
 
+router.post('/config', (req, res) => {
+  res.json({
+    message: 'config',
+  })
+})
+
+router.post('/config/transform', (req, res) => {
+  res.json({
+    data: {
+      message: 'config transform',
+    },
+  })
+})
+
 module.exports = router
