@@ -43,6 +43,11 @@ export default defineComponent({
         url: 'config',
         name: 'config',
       },
+      {
+        id: 'cancel',
+        url: 'cancel',
+        name: 'cancel',
+      },
     ]
 
     return {

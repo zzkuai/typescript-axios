@@ -98,4 +98,18 @@ router.post('/config/transform', (req, res) => {
   })
 })
 
+router.get('/cancel', (req, res) => {
+  setTimeout(() => {
+    res.json({
+      message: 'cancel get',
+    })
+  }, 1000)
+})
+
+router.post('/cancel', (req, res) => {
+  setTimeout(() => {
+    res.json(req.body)
+  }, 1000)
+})
+
 module.exports = router

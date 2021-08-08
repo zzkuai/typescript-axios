@@ -42,6 +42,11 @@ const router = createRouter({
       name: 'config',
       component: () => import('./pages/config.vue'),
     },
+    {
+      path: '/cancel',
+      name: 'cancel',
+      component: () => import('./pages/cancel.vue'),
+    },
   ],
 })
 
