@@ -53,6 +53,11 @@ export default defineComponent({
         url: 'withCredentials',
         name: 'withCredentials',
       },
+      {
+        id: 'xsrf',
+        url: 'xsrf',
+        name: 'xsrf',
+      },
     ];
 
     return {

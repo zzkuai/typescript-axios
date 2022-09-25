@@ -52,6 +52,11 @@ const router = createRouter({
       name: 'withCredentials',
       component: () => import('./pages/withCredentials.vue'),
     },
+    {
+      path: '/xsrf',
+      name: 'xsrf',
+      component: () => import('./pages/xsrf.vue'),
+    },
   ],
 });
 

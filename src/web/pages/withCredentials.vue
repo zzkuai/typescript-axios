@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <a href="https://www.baidu.com">baidu</a>
+  </div>
 </template>
 
 <script lang="ts">
