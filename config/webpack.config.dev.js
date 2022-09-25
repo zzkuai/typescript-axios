@@ -9,8 +9,8 @@ module.exports = merge(baseConfig, {
 
   devServer: {
     hot: true,
-    noInfo: true,
-    open: true,
+    // noInfo: true,
+    // open: true,
     contentBase: resolve('dist'),
     proxy: {
       '/api': {

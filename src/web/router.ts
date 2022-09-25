@@ -47,6 +47,11 @@ const router = createRouter({
       name: 'cancel',
       component: () => import('./pages/cancel.vue'),
     },
+    {
+      path: '/withCredentials',
+      name: 'withCredentials',
+      component: () => import('./pages/withCredentials.vue'),
+    },
   ],
 })
 

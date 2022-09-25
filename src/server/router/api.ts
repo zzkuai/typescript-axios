@@ -1,20 +1,20 @@
-const router = require('express').Router()
+const apiRouter = require('express').Router()
 
-router.get('/simple', (req, res) => {
+apiRouter.get('/simple', (req, res) => {
   res.send({ success: false })
 })
 
-router.get('/base', (req, res) => {
+apiRouter.get('/base', (req, res) => {
   res.json(req.query)
 })
 
-router.post('/base', (req, res) => {
+apiRouter.post('/base', (req, res) => {
   console.log('req.body', req.body)
 
   res.json(req.body)
 })
 
-router.post('/base/buffer', (req, res) => {
+apiRouter.post('/base/buffer', (req, res) => {
   let msg: any[] = []
   req.on('data', (chunk) => {
     if (chunk) {
@@ -27,7 +27,7 @@ router.post('/base/buffer', (req, res) => {
   })
 })
 
-router.get('/error', (req, res) => {
+apiRouter.get('/error', (req, res) => {
   if (Math.random() > 0.5) {
     res.json({ success: true })
   } else {
@@ -36,37 +36,37 @@ router.get('/error', (req, res) => {
   }
 })
 
-router.get('/error/timeout', (req, res) => {
+apiRouter.get('/error/timeout', (req, res) => {
   setTimeout(() => {
     res.json({ success: true })
   }, 3000)
 })
 
-router.get('/extend', (req, res) => {
+apiRouter.get('/extend', (req, res) => {
   res.send('extend get')
 })
 
-router.post('/extend', (req, res) => {
+apiRouter.post('/extend', (req, res) => {
   res.send('extend post')
 })
 
-router.put('/extend', (req, res) => {
+apiRouter.put('/extend', (req, res) => {
   res.send('extend put')
 })
 
-router.delete('/extend', (req, res) => {
+apiRouter.delete('/extend', (req, res) => {
   res.send('extend delete')
 })
 
-router.patch('/extend', (req, res) => {
+apiRouter.patch('/extend', (req, res) => {
   res.send('extend patch')
 })
 
-router.options('/extend', (req, res) => {
+apiRouter.options('/extend', (req, res) => {
   res.send('extend options')
 })
 
-router.post('/extend/user', (req, res) => {
+apiRouter.post('/extend/user', (req, res) => {
   res.json({
     code: 0,
     msg: '成功',
@@ -77,20 +77,20 @@ router.post('/extend/user', (req, res) => {
   })
 })
 
-router.get('/interceptor', (req, res) => {
+apiRouter.get('/interceptor', (req, res) => {
   res.json({
     message: 'interceptor',
     number: '',
   })
 })
 
-router.post('/config', (req, res) => {
+apiRouter.post('/config', (req, res) => {
   res.json({
     message: 'config',
   })
 })
 
-router.post('/config/transform', (req, res) => {
+apiRouter.post('/config/transform', (req, res) => {
   res.json({
     data: {
       message: 'config transform',
@@ -98,7 +98,7 @@ router.post('/config/transform', (req, res) => {
   })
 })
 
-router.get('/cancel', (req, res) => {
+apiRouter.get('/cancel', (req, res) => {
   setTimeout(() => {
     res.json({
       message: 'cancel get',
@@ -106,10 +106,10 @@ router.get('/cancel', (req, res) => {
   }, 1000)
 })
 
-router.post('/cancel', (req, res) => {
+apiRouter.post('/cancel', (req, res) => {
   setTimeout(() => {
     res.json(req.body)
   }, 1000)
 })
 
-module.exports = router
+module.exports = apiRouter

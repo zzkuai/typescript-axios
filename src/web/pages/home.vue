@@ -48,6 +48,11 @@ export default defineComponent({
         url: 'cancel',
         name: 'cancel',
       },
+      {
+        id: 'withCredentials',
+        url: 'withCredentials',
+        name: 'withCredentials',
+      },
     ]
 
     return {
