@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
-import axios from '@/axios'
+import { defineComponent, onMounted } from 'vue';
+import axios from '@/axios';
 
 export default defineComponent({
   name: 'Simple',
@@ -15,10 +15,10 @@ export default defineComponent({
         params: {
           name: 'zzkuai',
         },
-      })
-    })
+      });
+    });
 
-    return {}
+    return {};
   },
-})
+});
 </script>

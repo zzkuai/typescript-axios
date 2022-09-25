@@ -1,6 +1,6 @@
-import { AxiosPromise, AxiosRequestConfig, AxiosResponse } from '../types'
-import { parseHeaders } from '../helpers/header'
-import { createAxiosError } from '../helpers/error'
+import { AxiosPromise, AxiosRequestConfig, AxiosResponse } from '../types';
+import { parseHeaders } from '../helpers/header';
+import { createAxiosError } from '../helpers/error';
 
 export default function xhr(config: AxiosRequestConfig): AxiosPromise {
   return new Promise((resolve, reject) => {
@@ -13,37 +13,37 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
       responseType,
       cancelToken,
       withCredentials,
-    } = config
+    } = config;
 
-    const request = new XMLHttpRequest()
+    const request = new XMLHttpRequest();
 
     if (responseType) {
-      request.responseType = responseType
+      request.responseType = responseType;
     }
 
     if (timeout) {
-      request.timeout = timeout
+      request.timeout = timeout;
     }
 
     if (withCredentials) {
-      request.withCredentials = withCredentials
+      request.withCredentials = withCredentials;
     }
 
-    request.open(method.toUpperCase(), url!, true)
+    request.open(method.toUpperCase(), url!, true);
 
     request.onreadystatechange = function handleLoad() {
       if (request.readyState !== 4) {
-        return
+        return;
       }
 
       if (request.status === 0) {
         // 网络错误 / 超时错误
-        return
+        return;
       }
 
-      const responseHeaders = request.getAllResponseHeaders()
+      const responseHeaders = request.getAllResponseHeaders();
       const responseData =
-        responseType !== 'text' ? request.response : request.responseText
+        responseType !== 'text' ? request.response : request.responseText;
       const response: AxiosResponse = {
         data: responseData,
         status: request.status,
@@ -51,14 +51,14 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
         statusText: request.statusText,
         config,
         request,
-      }
+      };
 
-      handleResponse(response)
-    }
+      handleResponse(response);
+    };
 
     request.onerror = function handleError() {
-      reject(createAxiosError('Network Error', config, null, request))
-    }
+      reject(createAxiosError('Network Error', config, null, request));
+    };
 
     request.ontimeout = function handleTimeout() {
       reject(
@@ -68,29 +68,29 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
           'ECONNABORTED',
           request
         )
-      )
-    }
+      );
+    };
 
     Object.keys(headers).forEach((name) => {
       if (data === null && name.toLowerCase() === 'content-type') {
-        delete headers[name]
+        delete headers[name];
       } else {
-        request.setRequestHeader(name, headers[name])
+        request.setRequestHeader(name, headers[name]);
       }
-    })
+    });
 
     if (cancelToken) {
       cancelToken.promise.then((reason) => {
-        request.abort()
-        reject(reason)
-      })
+        request.abort();
+        reject(reason);
+      });
     }
 
-    request.send(data)
+    request.send(data);
 
     function handleResponse(response: AxiosResponse): void {
       if (response.status >= 200 && response.status < 300) {
-        resolve(response)
+        resolve(response);
       } else {
         reject(
           createAxiosError(
@@ -100,8 +100,8 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
             request,
             response
           )
-        )
+        );
       }
     }
-  })
+  });
 }

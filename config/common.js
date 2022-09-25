@@ -1,3 +1,3 @@
-const path = require('path')
+const path = require('path');
 
-exports.resolve = (file) => path.resolve(__dirname, '../' + file)
+exports.resolve = (file) => path.resolve(__dirname, '../' + file);

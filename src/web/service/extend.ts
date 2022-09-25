@@ -1,14 +1,14 @@
-import axios from '@/axios'
+import axios from '@/axios';
 
 interface ResponseData<T = any> {
-  code: number
-  message: string
-  data: T
+  code: number;
+  message: string;
+  data: T;
 }
 
 export interface User {
-  name: string
-  age: number
+  name: string;
+  age: number;
 }
 
 export function getUser<T>() {
@@ -17,5 +17,5 @@ export function getUser<T>() {
     data: {
       msg: 'hello',
     },
-  }).then((res) => res.data)
+  }).then((res) => res.data);
 }

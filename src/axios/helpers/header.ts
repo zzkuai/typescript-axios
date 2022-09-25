@@ -1,9 +1,9 @@
-import { Method } from '../types'
-import { deepMerge, isPlainObject } from './util'
+import { Method } from '../types';
+import { deepMerge, isPlainObject } from './util';
 
 function normalizeHeaderName(headers: any, normalizeName: string): void {
   if (!headers) {
-    return
+    return;
   }
 
   Object.keys(headers).forEach((name) => {
@@ -11,52 +11,52 @@ function normalizeHeaderName(headers: any, normalizeName: string): void {
       name !== normalizeName &&
       name.toUpperCase() === normalizeName.toUpperCase()
     ) {
-      headers[normalizeName] = headers[name]
-      delete headers[name]
+      headers[normalizeName] = headers[name];
+      delete headers[name];
     }
-  })
+  });
 }
 
 export function processHeaders(headers: any, data: any): any {
-  normalizeHeaderName(headers, 'Content-Type')
+  normalizeHeaderName(headers, 'Content-Type');
 
   if (isPlainObject(data)) {
     if (headers && !headers['Content-Type']) {
-      headers['Content-Type'] = 'application/json;charset=utf-8'
+      headers['Content-Type'] = 'application/json;charset=utf-8';
     }
   }
 
-  return headers
+  return headers;
 }
 
 export function parseHeaders(headers: string): any {
-  let parsed = Object.create(null)
+  let parsed = Object.create(null);
 
   if (!headers) {
-    return parsed
+    return parsed;
   }
 
   headers.split('\r\n').forEach((line) => {
-    let [key, val] = line.split(':')
-    key = key.trim().toLowerCase()
+    let [key, val] = line.split(':');
+    key = key.trim().toLowerCase();
     if (!key) {
-      return
+      return;
     }
     if (val) {
-      val = val.trim()
+      val = val.trim();
     }
-    parsed[key] = val
-  })
+    parsed[key] = val;
+  });
 
-  return parsed
+  return parsed;
 }
 
 export function falttenHeaders(headers: any, method: Method): any {
   if (!headers) {
-    return headers
+    return headers;
   }
 
-  headers = deepMerge(headers.common, headers[method], headers)
+  headers = deepMerge(headers.common, headers[method], headers);
 
   const methodsToDelete = [
     'get',
@@ -67,10 +67,10 @@ export function falttenHeaders(headers: any, method: Method): any {
     'put',
     'patch',
     'common',
-  ]
+  ];
   methodsToDelete.forEach((method) => {
-    delete headers[method]
-  })
+    delete headers[method];
+  });
 
-  return headers
+  return headers;
 }

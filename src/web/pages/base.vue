@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
-import axios from '@/axios'
+import { defineComponent, onMounted } from 'vue';
+import axios from '@/axios';
 
 export default defineComponent({
   name: 'Base',
@@ -16,7 +16,7 @@ export default defineComponent({
         params: {
           foo: ['bar', 'baz'],
         },
-      })
+      });
 
       axios({
         method: 'get',
@@ -26,9 +26,9 @@ export default defineComponent({
             bar: 'baz',
           },
         },
-      })
+      });
 
-      const date = new Date()
+      const date = new Date();
 
       axios({
         method: 'get',
@@ -36,7 +36,7 @@ export default defineComponent({
         params: {
           date,
         },
-      })
+      });
 
       axios({
         method: 'get',
@@ -44,7 +44,7 @@ export default defineComponent({
         params: {
           foo: '@:$, ',
         },
-      })
+      });
 
       axios({
         method: 'get',
@@ -54,7 +54,7 @@ export default defineComponent({
           baz: null,
           bar: undefined,
         },
-      })
+      });
 
       axios({
         method: 'get',
@@ -62,7 +62,7 @@ export default defineComponent({
         params: {
           foo: 'bar',
         },
-      })
+      });
 
       axios({
         method: 'get',
@@ -70,7 +70,7 @@ export default defineComponent({
         params: {
           bar: 'baz',
         },
-      })
+      });
 
       axios({
         method: 'post',
@@ -81,8 +81,8 @@ export default defineComponent({
           b: 2,
         },
       }).then((res) => {
-        console.log(res)
-      })
+        console.log(res);
+      });
 
       axios({
         method: 'post',
@@ -97,25 +97,25 @@ export default defineComponent({
           c: 3,
         },
       }).then((res) => {
-        console.log(res)
-      })
+        console.log(res);
+      });
 
-      const paramsString = 'q=URLUtils.searchParams&topic=api'
-      const searchParams = new URLSearchParams(paramsString)
+      const paramsString = 'q=URLUtils.searchParams&topic=api';
+      const searchParams = new URLSearchParams(paramsString);
       axios({
         method: 'post',
         url: '/api/base',
         data: searchParams,
-      })
+      });
 
       axios({
         method: 'post',
         url: '/api/base/buffer',
         data: new Int32Array([21, 32]),
-      })
-    })
+      });
+    });
 
-    return {}
+    return {};
   },
-})
+});
 </script>

@@ -1,8 +1,8 @@
-const wepback = require('webpack')
-const { resolve } = require('./common')
-const { VueLoaderPlugin } = require('vue-loader')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const wepback = require('webpack');
+const { resolve } = require('./common');
+const { VueLoaderPlugin } = require('vue-loader');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: resolve('./src/web/index.ts'),
@@ -60,4 +60,4 @@ module.exports = {
       template: resolve('./src/web/index.html'),
     }),
   ],
-}
+};

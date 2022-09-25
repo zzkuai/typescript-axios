@@ -1,6 +1,6 @@
-const { resolve } = require('./common')
-const { merge } = require('webpack-merge')
-const baseConfig = require('./webpack.config.base')
+const { resolve } = require('./common');
+const { merge } = require('webpack-merge');
+const baseConfig = require('./webpack.config.base');
 
 module.exports = merge(baseConfig, {
   mode: 'development',
@@ -18,4 +18,4 @@ module.exports = merge(baseConfig, {
       },
     },
   },
-})
+});
